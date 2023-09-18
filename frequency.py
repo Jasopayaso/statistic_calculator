@@ -12,6 +12,9 @@ class Frequency():
         smallestValue = float(input('What is the smallest value: '))
         largestValue = float(input('What is the largest value: '))
 
+        amountOfValues = int(input('How many data points do you have? :'))
+        temp = 0
+        dataPointList = []
         while True:
             groupedCheck = input('Is the data grouped (y/n): ')
             if groupedCheck not in ('y', 'n'):
@@ -19,9 +22,13 @@ class Frequency():
             else:
                 break
         
-        values = list(input('Enter your values: '))
-        print(values)
-        a = np.array(values.split())
+        while temp < amountOfValues:
+            value = input("Enter your data point: ")
+            dataPointList.append(value)
+            temp += 1
+
+       
+
         if groupedCheck == 'n':
             self.indvData()
         rFrequencyCheck = input('Do you want to calculate relative frequency (y/n): ')
